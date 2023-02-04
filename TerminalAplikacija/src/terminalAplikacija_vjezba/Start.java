@@ -16,6 +16,7 @@ public class Start {
 		}
 
 		public void glavniIzbornik() {
+			System.out.println("");
 			System.out.println("GLAVNI IZBORNIK: ");
 			System.out.println("1. Proizvodi");
 			System.out.println("2. Promet");
@@ -28,10 +29,13 @@ public class Start {
 		private void odabirGlavnogIzbornika() {
 			switch (Pomocno.unosBrojaURasponu("Odabrana opcija:", 1, 4)) {
 			case 3:
-				
+				zaposlenici.izbornik();
+				break;
 			
 			case 4:
-				System.out.println("Doviđenja!");
+				System.out.println(" ");
+				System.out.println("DOVIĐENJA!");
+				
 				
 			}
 
@@ -44,7 +48,6 @@ public class Start {
 		}
 
 		public static void main(String[] args) {
-			
 			new Start();
 		}
 

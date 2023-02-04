@@ -23,5 +23,18 @@ public class Pomocno {
 			}
 		}
 	}
+	
+	public static String unosTeksta(String poruka) {
+		String s;
+		while(true) {
+			System.out.print(poruka);
+			s=ulaz.nextLine();
+			if(s.trim().isEmpty()) {
+				System.out.println("Obavezan unos");
+				continue;
+			}
+			return s;
+		}
+	}
 
 }
