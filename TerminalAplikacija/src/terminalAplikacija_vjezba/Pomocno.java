@@ -1,4 +1,4 @@
-package startIMetode;
+package terminalAplikacija_vjezba;
 
 import java.util.Scanner;
 

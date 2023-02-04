@@ -1,4 +1,4 @@
-package model;
+package terminalAplikacija_vjezba.model;
 
 public class Zaposlenik extends Entitet {
 

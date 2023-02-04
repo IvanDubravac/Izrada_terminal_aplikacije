@@ -1,10 +1,12 @@
-package obrada;
+package terminalAplikacija_vjezba.Obrada;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import model.Start;
-import model.Zaposlenik;
+import terminalAplikacija_vjezba.Start;
+import terminalAplikacija_vjezba.model.Zaposlenik;
+
+
 
 public class Zaposlenici {
 	
@@ -41,22 +43,6 @@ public class Zaposlenici {
 	}
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
 	
 	
 	

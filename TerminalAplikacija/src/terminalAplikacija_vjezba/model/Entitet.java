@@ -1,6 +1,6 @@
-package model;
+package terminalAplikacija_vjezba.model;
 
-abstract public class Entitet {
+public class Entitet {
 	private int sifra;
 
 	public Entitet() {
@@ -19,5 +19,5 @@ abstract public class Entitet {
 	public void setSifra(int sifra) {
 		this.sifra = sifra;
 	}
-	
+
 }
