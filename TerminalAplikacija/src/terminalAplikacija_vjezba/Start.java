@@ -3,14 +3,17 @@ package terminalAplikacija_vjezba;
 import java.util.Scanner;
 
 import terminalAplikacija_vjezba.Obrada.Zaposlenici;
+import terminalAplikacija_vjezba.model.Promet;
 
 public class Start {
 		
 		private Zaposlenici zaposlenici;
+		private Promet promet;
 
 		public Start() {
 			Pomocno.ulaz = new Scanner(System.in);
 			zaposlenici=new Zaposlenici(this);
+			promet=new Promet(this);
 			pozdravnaPoruka();
 			glavniIzbornik();
 		}
@@ -28,12 +31,13 @@ public class Start {
 
 		private void odabirGlavnogIzbornika() {
 			switch (Pomocno.unosBrojaURasponu("Odabrana opcija:", 1, 4)) {
+			case 2:
+				
 			case 3:
 				zaposlenici.izbornik();
 				break;
 			
 			case 4:
-				System.out.println(" ");
 				System.out.println("DOVIĐENJA!");
 				
 				
