@@ -11,11 +11,13 @@ import java.math.BigDecimal;
 public class Proizvodi {
 	private Start start;
 	private List<Proizvod> proizvodi;
+	
 
 	public Proizvodi(Start start) {
 		super();
 		this.start = start;
 		proizvodi = new ArrayList<>();
+		
 
 		testproizvodi();
 	}
@@ -32,6 +34,7 @@ public class Proizvodi {
 		super();
 		this.start = start;
 		this.proizvodi = proizvodi;
+		testproizvodi();
 	}
 
 	public Start getStart() {
@@ -66,13 +69,24 @@ public class Proizvodi {
 		switch (Pomocno.unosBrojaURasponu("Odaberite željenu opciju: ", 1, 5)) {
 		case 1:
 			popis(true);
+			break;
 		case 2:
 			dodavanjeProizvoda();
 			izbornik();
+			break;
 		case 3:
-			promjenaProizvoda();
+			if(proizvodi.size()==0) {
+				System.out.println("Nema unesenih proizvoda");
+			}else{
+				promjenaProizvoda();
+			} break;
 		case 4:
+			if(proizvodi.size()==0) {
+				System.out.println("Nema unesenih proizvoda");
+			}else{
 			brisanjeProizvoda();
+			}
+			break;
 		case 5:
 			start.glavniIzbornik();
 
@@ -111,7 +125,7 @@ public class Proizvodi {
 	}
 	
 	
-	private void popis(boolean popisProizvoda) {
+	public void popis(boolean popisProizvoda) {
 		System.out.println("\nProizvodi: ");
 		int rb=1;
 		for(Proizvod p : proizvodi) {
@@ -121,5 +135,8 @@ public class Proizvodi {
 			izbornik();
 		}
 	}
+	
+	
+	
 
 }

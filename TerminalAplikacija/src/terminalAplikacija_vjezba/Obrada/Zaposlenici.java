@@ -135,7 +135,7 @@ public class Zaposlenici {
 		if (prikaziZaposlenike) {
 			izbornik();
 		}
-
+		
 	}
 
 }
