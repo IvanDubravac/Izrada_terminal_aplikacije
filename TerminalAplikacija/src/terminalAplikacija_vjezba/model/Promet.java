@@ -63,5 +63,11 @@ public class Promet extends Entitet {
 	public void setVrsta(Vrsta vrsta) {
 		this.vrsta = vrsta;
 	}
+	
+	@Override
+	public String toString() {
+		
+		return proizvodi.getNaziv()+ " posao obavio ("+zaposlenik.getIme()+" "+zaposlenik.getPrezime()+") ";
+	}
 
 }

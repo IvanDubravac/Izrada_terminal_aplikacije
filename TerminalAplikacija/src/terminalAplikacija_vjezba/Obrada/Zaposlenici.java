@@ -126,7 +126,7 @@ public class Zaposlenici {
 		return z;
 	}
 
-	private void popis(boolean prikaziZaposlenike) {
+	public void popis(boolean prikaziZaposlenike) {
 		System.out.println("\nZaposlenici: ");
 		int rb = 1;
 		for (Zaposlenik z : zaposlenici) {

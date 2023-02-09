@@ -7,6 +7,7 @@ import terminalAplikacija_vjezba.Pomocno;
 import terminalAplikacija_vjezba.Start;
 
 import terminalAplikacija_vjezba.model.Promet;
+import terminalAplikacija_vjezba.model.Vrsta;
 
 
 public class Prometi {
@@ -68,8 +69,20 @@ public class Prometi {
 	}
 
 	private void dopremaRobe() {
-		start.getProizvodi().popis(true);
-		int rb=Pomocno.unosBrojaURasponu("Odaberite proizvod koji bi dopremili u skladište", 1, start.getProizvodi().getProizvodi().size());
+		Promet p=new Promet();
+		p.setSifra(Pomocno.unosBrojaURasponu("Unesite šifru prometa: ", 1, Integer.MAX_VALUE));
+		start.getProizvodi().popis(false);
+		int rb1=Pomocno.unosBrojaURasponu("Unesite proizvod koji želite dopremiti u skladište: ", 1, start.getProizvodi().getProizvodi().size());
+		p.setProizvodi(start.getProizvodi().getProizvodi().get(rb1-1));
+		start.getZaposlenici().popis(false);
+		int rb2=Pomocno.unosBrojaURasponu("Koji zaposlenik je obavio dopremu proizvoda u skladište: ", 1, start.getZaposlenici().getZaposlenici().size());
+		p.setProizvodi(start.getProizvodi().getProizvodi().get(rb2-1));
+		
+		
+		prometi.add(p);
+		izbornik();
+		
+		
 		
 		
 		
