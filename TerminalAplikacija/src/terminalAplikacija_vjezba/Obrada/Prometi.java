@@ -51,21 +51,44 @@ public class Prometi {
 		System.out.println("1. Skladište");
 		System.out.println("2. Doprema robe");
 		System.out.println("3. Odprema robe");
-		System.out.println("4. Izlaz iz programa");
+		System.out.println("4. Povratak u glavni menu");
 		odabirIzbornik();
 
 	}
 
 	private void odabirIzbornik() {
-		switch (Pomocno.unosBrojaURasponu("Unesite željenu opciju: ", 1, 3)) {
+		switch (Pomocno.unosBrojaURasponu("Unesite željenu opciju: ", 1, 4)) {
 		case 1:
-			prikazStanja(true);
+			System.out.println("PROIZVODI U SKLADIŠTU: ");
+			if(prometi.size()==0) {
+				System.out.println("Nema proizvoda u skladištu!");
+			}else {
+				prikazStanja(true);
+			}
 			break;
 		case 2:
 			dopremaRobe();
 			break;
-		}
+		case 3:
+			odpremaRobe();
+		case 4:
+			start.glavniIzbornik();
+			break;
+	}
 
+
+		
+		
+	}
+
+	private void odpremaRobe() {
+		prikazStanja(false);
+		int rb=Pomocno.unosBrojaURasponu("Unesite proizvod koji želite odpremiti iz skladišta: ", 1, prometi.size());
+		prometi.remove(rb-1);
+		start.getZaposlenici().popis(false);	
+		izbornik();
+		
+		
 	}
 
 	private void dopremaRobe() {
@@ -76,7 +99,8 @@ public class Prometi {
 		p.setProizvodi(start.getProizvodi().getProizvodi().get(rb1-1));
 		start.getZaposlenici().popis(false);
 		int rb2=Pomocno.unosBrojaURasponu("Koji zaposlenik je obavio dopremu proizvoda u skladište: ", 1, start.getZaposlenici().getZaposlenici().size());
-		p.setProizvodi(start.getProizvodi().getProizvodi().get(rb2-1));
+		p.setZaposlenik(start.getZaposlenici().getZaposlenici().get(rb2-1));
+		
 		
 		
 		prometi.add(p);

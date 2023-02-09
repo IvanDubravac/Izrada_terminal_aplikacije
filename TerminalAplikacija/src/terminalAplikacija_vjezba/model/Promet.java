@@ -3,6 +3,8 @@ package terminalAplikacija_vjezba.model;
 import java.math.BigDecimal;
 import java.util.Date;
 
+import terminalAplikacija_vjezba.Obrada.Zaposlenici;
+
 public class Promet extends Entitet {
 	private Proizvod proizvodi;
 	private BigDecimal kolicina;
@@ -67,7 +69,8 @@ public class Promet extends Entitet {
 	@Override
 	public String toString() {
 		
-		return proizvodi.getNaziv()+ " posao obavio ("+zaposlenik.getIme()+" "+zaposlenik.getPrezime()+") ";
+		return proizvodi.getNaziv()+ " -> posao obavio "+zaposlenik.getIme()+" "+zaposlenik.getPrezime();
+				
 	}
 
 }
